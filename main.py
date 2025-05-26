@@ -22,21 +22,20 @@ y = train["smoking"].astype(int)
 X_test = add_features(test.drop(columns=["id"]))
 test_ids = test["id"]
 
-# Final model with best params from Optuna
+# Final model with best params from Optuna trial 42
 model = XGBClassifier(
-    learning_rate=0.0534,
-    n_estimators=936,
-    max_depth=3,
-    subsample=0.7003,
-    colsample_bytree=0.7548,
-    gamma=1.2670,
-    min_child_weight=2,
-    reg_alpha=4.8035,
-    reg_lambda=2.9730,
+    learning_rate=0.03301987080120933,
+    n_estimators=715,
+    max_depth=5,
+    subsample=0.7051291256244675,
+    colsample_bytree=0.5372970581642996,
+    gamma=1.1019408371572554,
+    min_child_weight=6,
+    reg_alpha=2.332736117257119,
+    reg_lambda=1.7730825690215464,
     eval_metric="logloss",
     random_state=42,
-    verbosity=0,
-    use_label_encoder=False
+    verbosity=0
 )
 
 # Cross-validation
